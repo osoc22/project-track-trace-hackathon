@@ -77,8 +77,15 @@ const changeLocation = () => {
 
     </ol-vector-layer>
   </ol-map>
+  <div class="scss-test">
+    <p>hELLO WORLD </p>
+  </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 @import 'vue3-openlayers/dist/vue3-openlayers.css';
+.scss-test p{
+  min-height: 200px;
+  color: blue;
+}
 </style>
