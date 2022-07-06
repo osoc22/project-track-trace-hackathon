@@ -28,8 +28,8 @@ const changeLocation = () => {
 </script>
 
 <template>
-  <button @click="changeLocation">changecoor</button>
-  <ol-map ref="map" :loadTilesWhileAnimating="true" :loadTilesWhileInteracting="true" style="height:600px">
+  <button style="position: absolute; z-index: 1; margin-left: 15px; margin-top: 15px;" @click="changeLocation">changecoor</button>
+  <ol-map ref="map" :loadTilesWhileAnimating="true" :loadTilesWhileInteracting="true" style="height:100%; width: 100%; position: fixed;">
     <ol-view ref="view" :center="center" :rotation="rotation" :zoom="zoom" :projection="projection" />
     <ol-tile-layer>
       <ol-source-osm />
