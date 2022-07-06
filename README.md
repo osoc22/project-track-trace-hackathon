@@ -25,6 +25,8 @@ Start the development server on http://localhost:3000
 npm run dev
 ```
 
+> ‼ When running the app, make sure that you activate the "Bypass for network option" option (Devtools => App => Service Worker => Bypass for network)
+
 ## Production
 
 Build the application for production:
