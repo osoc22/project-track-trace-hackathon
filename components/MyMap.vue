@@ -26,9 +26,9 @@ const changeLocation = () => {
 
 
 </script>
-
+<!--TODO make sure that (hot)-reloading still loads the map. Now we sometimes get stuck on 'loading map'-->
 <template>
-  <button style="position: absolute; z-index: 1; margin-left: 15px; margin-top: 15px;" @click="changeLocation">changecoor</button>
+  <button class="changeloc" @click="changeLocation">changecoor</button>
   <ol-map ref="map" :loadTilesWhileAnimating="true" :loadTilesWhileInteracting="true" style="height:100%; width: 100%; position: fixed;">
     <ol-view ref="view" :center="center" :rotation="rotation" :zoom="zoom" :projection="projection" />
     <ol-tile-layer>
@@ -77,15 +77,13 @@ const changeLocation = () => {
 
     </ol-vector-layer>
   </ol-map>
+  <!-- css test -->
   <div class="scss-test">
-    <p>hELLO WORLD </p>
+    <p>HELLO WORLD </p>
   </div>
 </template>
 
 <style scoped lang="scss">
 @import 'vue3-openlayers/dist/vue3-openlayers.css';
-.scss-test p{
-  min-height: 200px;
-  color: blue;
-}
+@import 'assets/styles/testStyle.scss';
 </style>

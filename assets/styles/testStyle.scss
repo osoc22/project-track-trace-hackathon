@@ -1,0 +1,52 @@
+@use 'sass:math';
+// learned all of this via https://sass-lang.com/documentation/ 
+
+// re-usable class via @include overlayed;
+@mixin overlayed {
+    position: absolute;
+    z-index: 1;
+}
+
+@mixin leftmargin{
+    margin-left: 15px;
+}
+
+@mixin globalFont($size){
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 750;
+    font-size: $size;
+}
+
+$button-size: 25px;
+$button-top: 15px;
+
+// specific text style
+.scss-test p{
+    @include overlayed();
+    // passing a variable to mixin
+    $size: 50px;
+    @include globalFont($size);
+    // just setting the color
+    color: rgb(97, 241, 229);
+    @include leftmargin();
+    // using global variables
+    margin-top: 30px+$button-size+$button-top;
+    // using variables in math (needs @use 'sass:math' on top)
+    text-shadow: 2px 2px math.div($size,2) #9900ff;
+    transition: 0.5s ease-in-out;
+
+    // on-hover decorator
+    &:hover{
+        cursor:grab;
+        text-shadow: 2px 2px $size*2 #9900ff;
+    }
+  }
+
+// specific change location button style
+.changeloc{
+    @include overlayed();
+    @include globalFont($button-size);
+    @include leftmargin();
+    margin-top: $button-top;
+    font-size: $button-size;
+}
